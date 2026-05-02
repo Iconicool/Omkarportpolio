@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <meta name="description" content="Omkar Mahadik — UI/UX Designer based in Mumbai, India. Crafting clean, intuitive digital experiences. Open to internship opportunities."/>
   <meta name="keywords" content="UI UX Designer, Mumbai, Omkar Mahadik, Iconic, Portfolio, Figma, Framer, Product Design"/>
   <meta name="author" content="Omkar Mahadik"/>
@@ -16,44 +16,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css">
-<style>
-/* ── TOKENS ──────────────────────────────────────────────── */
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-</style>
 </head>
 <body>
 
-<!-- PROGRESS BAR -->
-<div id="progress-bar"></div>
+<div id="prog"></div>
 
-<!-- PRELOADER -->
-<div id="preloader">
-  <div class="pre-name"><span>Omkar</span><em>.</em></div>
-  <div class="pre-bar-wrap"><div class="pre-bar"></div></div>
+<div id="loader" aria-hidden="true">
+  <div class="ld-name"><span>Omkar</span><em>.</em></div>
+  <div class="ld-bg"><div class="ld-fill"></div></div>
 </div>
 
-<!-- CURSOR -->
-<div id="c-dot"></div>
-<div id="c-ring"></div>
+<div id="cdot" aria-hidden="true"></div>
+<div id="cring" aria-hidden="true"></div>
 
-<!-- ── NAV ──────────────────────────────────────────────────── -->
-<nav id="nav">
+<!-- NAV -->
+<nav id="nav" aria-label="Main navigation">
   <a href="#" class="nav-logo">Omkar<b>.</b></a>
-  <div class="nav-pill">
-    <a href="#about" class="n-lnk">About</a>
-    <a href="#work" class="n-lnk">Work</a>
-    <a href="#process" class="n-lnk">Process</a>
-    <a href="#contact" class="n-lnk">Contact</a>
+  <div class="nav-pill" role="menubar">
+    <a href="#about"   class="nl" role="menuitem">About</a>
+    <a href="#work"    class="nl" role="menuitem">Work</a>
+    <a href="#process" class="nl" role="menuitem">Process</a>
+    <a href="#contact" class="nl" role="menuitem">Contact</a>
   </div>
   <div class="nav-r">
     <div class="avail"><div class="avail-dot"></div><span class="avail-txt">Available for Internships</span></div>
-    <button id="theme-btn" aria-label="Toggle dark mode">
-      <svg id="theme-icon" viewBox="0 0 24 24"><path id="theme-path" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    <button id="tbtn" class="icon-btn" aria-label="Toggle dark mode">
+      <svg viewBox="0 0 24 24"><path id="tpath" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+    <button id="ham" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- ── HERO ──────────────────────────────────────────────────── -->
+<!-- MOBILE NAV -->
+<div id="mob-nav" aria-hidden="true">
+  <a href="#about"   class="mob-link">About <span class="mob-link-arr">→</span></a>
+  <a href="#work"    class="mob-link">Work <span class="mob-link-arr">→</span></a>
+  <a href="#process" class="mob-link">Process <span class="mob-link-arr">→</span></a>
+  <a href="#contact" class="mob-link">Contact <span class="mob-link-arr">→</span></a>
+</div>
+
+<!-- HERO -->
 <section id="hero">
   <div class="hero-tag">UI/UX Designer &nbsp;·&nbsp; Mumbai, India</div>
   <h1 class="hero-h">
@@ -64,51 +70,52 @@
   <div class="hero-ft">
     <p class="hero-desc">Designing <strong>clean, intuitive</strong> digital experiences that feel effortless to use. Research-led. Minimal by nature.</p>
     <div class="hero-ctas">
-      <a href="#work" class="btn-s">View Work <span class="btn-arr">↗</span></a>
-      <a href="#contact" class="btn-o">Let's Talk</a>
+      <a href="#work"    class="btn-s">View Work <span class="ba">↗</span></a>
+      <a href="#contact" class="btn-g">Let's Talk</a>
     </div>
   </div>
-  <div class="scroll-cue"><div class="sc-line"></div><span class="sc-txt">Scroll to explore</span></div>
+  <div class="scue" aria-hidden="true">
+    <div class="scue-line"></div><span class="scue-txt">Scroll to explore</span>
+  </div>
 </section>
 
-<!-- ── TICKER ─────────────────────────────────────────────────── -->
-<div class="ticker">
-  <div class="ticker-track">
-    <span class="t-item">Figma<span class="t-dot"></span></span>
-    <span class="t-item">User Research<span class="t-dot"></span></span>
-    <span class="t-item">Wireframing<span class="t-dot"></span></span>
-    <span class="t-item">Prototyping<span class="t-dot"></span></span>
-    <span class="t-item">Visual Design<span class="t-dot"></span></span>
-    <span class="t-item">Framer<span class="t-dot"></span></span>
-    <span class="t-item">Usability Testing<span class="t-dot"></span></span>
-    <span class="t-item">Design Systems<span class="t-dot"></span></span>
-    <span class="t-item">Interaction Design<span class="t-dot"></span></span>
-    <span class="t-item">UI/UX Strategy<span class="t-dot"></span></span>
-    <!-- duplicate for seamless loop -->
-    <span class="t-item">Figma<span class="t-dot"></span></span>
-    <span class="t-item">User Research<span class="t-dot"></span></span>
-    <span class="t-item">Wireframing<span class="t-dot"></span></span>
-    <span class="t-item">Prototyping<span class="t-dot"></span></span>
-    <span class="t-item">Visual Design<span class="t-dot"></span></span>
-    <span class="t-item">Framer<span class="t-dot"></span></span>
-    <span class="t-item">Usability Testing<span class="t-dot"></span></span>
-    <span class="t-item">Design Systems<span class="t-dot"></span></span>
-    <span class="t-item">Interaction Design<span class="t-dot"></span></span>
-    <span class="t-item">UI/UX Strategy<span class="t-dot"></span></span>
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="tk">
+    <span class="ti">Figma<span class="td"></span></span>
+    <span class="ti">User Research<span class="td"></span></span>
+    <span class="ti">Wireframing<span class="td"></span></span>
+    <span class="ti">Prototyping<span class="td"></span></span>
+    <span class="ti">Visual Design<span class="td"></span></span>
+    <span class="ti">Framer<span class="td"></span></span>
+    <span class="ti">Usability Testing<span class="td"></span></span>
+    <span class="ti">Design Systems<span class="td"></span></span>
+    <span class="ti">Interaction Design<span class="td"></span></span>
+    <span class="ti">UI Strategy<span class="td"></span></span>
+    <span class="ti">Figma<span class="td"></span></span>
+    <span class="ti">User Research<span class="td"></span></span>
+    <span class="ti">Wireframing<span class="td"></span></span>
+    <span class="ti">Prototyping<span class="td"></span></span>
+    <span class="ti">Visual Design<span class="td"></span></span>
+    <span class="ti">Framer<span class="td"></span></span>
+    <span class="ti">Usability Testing<span class="td"></span></span>
+    <span class="ti">Design Systems<span class="td"></span></span>
+    <span class="ti">Interaction Design<span class="td"></span></span>
+    <span class="ti">UI Strategy<span class="td"></span></span>
   </div>
 </div>
 
-<!-- ── ABOUT ──────────────────────────────────────────────────── -->
+<!-- ABOUT -->
 <section id="about">
   <div class="about-sticky rev">
     <div class="about-num">01</div>
-    <div class="eyebrow">About Me</div>
-    <h2 class="sec-h" style="margin-bottom:.6rem;">Craft-led<br>design thinker.</h2>
-    <p class="sec-it" style="font-size:1.3rem;margin-bottom:2rem;">Research first. Always.</p>
+    <div class="ey">About Me</div>
+    <h2 class="sh" style="margin-bottom:.6rem;">Craft-led<br>design thinker.</h2>
+    <p class="sit" style="font-size:1.3rem;">Research first. Always.</p>
   </div>
   <div>
     <p class="about-p rev d1">I'm a UI/UX designer who believes the best design is the kind you <em>don't notice</em>. Research-first, minimal in execution, and obsessed with the gap between how something <b>looks</b> and how it <em>feels</em> to use. Currently pursuing my UI/UX Design course at <b>Edit Institute, Mumbai</b> — actively seeking internship opportunities to build real-world products.</p>
-    <p class="skills-lbl rev d2">Skills &amp; Tools</p>
+    <p class="slbl rev d2">Skills &amp; Tools</p>
     <div class="chips rev d2">
       <span class="chip">Figma</span><span class="chip">Framer</span>
       <span class="chip">User Research</span><span class="chip">Wireframing</span>
@@ -119,98 +126,108 @@
     <div class="edu-wrap rev d3">
       <div class="edu-row">
         <span class="edu-n">01</span>
-        <div>
-          <div class="edu-deg">UI/UX Design Course</div>
-          <div class="edu-sch">Edit Institute, Mumbai &nbsp;·&nbsp; Ongoing</div>
-        </div>
+        <div><div class="edu-deg">UI/UX Design Course</div><div class="edu-sch">Edit Institute, Mumbai &nbsp;·&nbsp; Ongoing</div></div>
       </div>
       <div class="edu-row">
         <span class="edu-n">02</span>
-        <div>
-          <div class="edu-deg">Bachelor of Computer Applications (BCA)</div>
-          <div class="edu-sch">Tilak Maharashtra Vidyapeeth &nbsp;·&nbsp; Completed</div>
-        </div>
+        <div><div class="edu-deg">Bachelor of Computer Applications (BCA)</div><div class="edu-sch">Tilak Maharashtra Vidyapeeth &nbsp;·&nbsp; Completed</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── WORK ───────────────────────────────────────────────────── -->
+<!-- WORK -->
 <section id="work">
   <div class="work-top rev">
     <div>
-      <div class="eyebrow">Selected Work</div>
-      <h2 class="work-h">Projects.<span>stories worth telling.</span></h2>
+      <div class="ey">Selected Work</div>
+      <h2 class="wh">Projects.<span>stories worth telling.</span></h2>
     </div>
-    <a href="https://www.behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study" target="_blank" rel="noopener" class="view-all">View All ↗</a>
+    <a href="https://www.behance.net/omkarmahadik" target="_blank" rel="noopener noreferrer" class="view-all">View All ↗</a>
   </div>
   <div class="bento">
-    <a href="https://www.behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study" target="_blank" rel="noopener" class="b-card b-feat rev d1">
+
+    <!-- ROW 1 -->
+    <!-- Card 1 — Rydo (featured, spans 2 cols) -->
+    <a href="https://www.behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study"
+       target="_blank" rel="noopener noreferrer"
+       class="bc bc-feat rev d1">
       <span class="b-tag"><span class="b-tdot"></span>UX Case Study</span>
       <span class="b-yr">2024</span>
       <h3 class="b-title">Rydo — Cab Booking App</h3>
       <p class="b-desc">A self-initiated UX redesign tackling simplified booking flow, credential management, smarter payment options, and vehicle selection — from user research through to high-fidelity prototype.</p>
       <div class="b-arr">↗</div>
     </a>
-    <div class="b-card b-sm b-soon rev d2"><div class="b-plus">＋</div><span class="b-slbl">Case Study<br>Coming Soon</span></div>
-    <div class="b-card b-sm b-soon rev d3"><div class="b-plus">＋</div><span class="b-slbl">In Progress</span></div>
-    <div class="b-card b-sm b-soon rev d4"><div class="b-plus">＋</div><span class="b-slbl">In Progress</span></div>
+
+    <!-- Card 2 — FoodNest UI Case Study -->
+    <a href="https://www.behance.net/omkarmahadik"
+       target="_blank" rel="noopener noreferrer"
+       class="bc bc-sm rev d2">
+      <span class="b-tag"><span class="b-tdot"></span>UI Case Study</span>
+      <span class="b-yr">2025</span>
+      <h3 class="b-title">FoodNest — Food Delivery App</h3>
+      <p class="b-desc">A UI redesign of a food delivery app focused on reducing friction in the ordering experience with a clean visual system and intuitive navigation.</p>
+      <div class="b-arr">↗</div>
+    </a>
+
+    <!-- ROW 2 -->
+    <!-- Card 3 — Coming soon -->
+    <div class="bc bc-sm bc-soon rev d3">
+      <div class="b-plus">＋</div>
+      <span class="b-slbl">Next Case Study<br>Coming Soon</span>
+    </div>
+    <!-- Card 4 — In progress -->
+    <div class="bc bc-sm bc-soon rev d4">
+      <div class="b-plus">＋</div>
+      <span class="b-slbl">In Progress</span>
+    </div>
+    <!-- Card 5 — In progress -->
+    <div class="bc bc-sm bc-soon rev d5">
+      <div class="b-plus">＋</div>
+      <span class="b-slbl">In Progress</span>
+    </div>
+
   </div>
 </section>
 
-<!-- ── PROCESS ────────────────────────────────────────────────── -->
+<!-- PROCESS -->
 <section id="process">
   <div class="rev">
     <div class="about-num" style="margin-bottom:-.4rem;">02</div>
-    <div class="eyebrow">My Process</div>
-    <h2 class="sec-h" style="margin-bottom:.6rem;">How I design.</h2>
-    <p class="sec-it" style="font-size:1.25rem;">Structured, yet human.</p>
+    <div class="ey">My Process</div>
+    <h2 class="sh" style="margin-bottom:.6rem;">How I design.</h2>
+    <p class="sit" style="font-size:1.25rem;">Structured, yet human.</p>
   </div>
   <div class="proc-list">
-    <div class="proc-item rev d1">
-      <span class="proc-n">01</span>
-      <div><div class="proc-name">Discover &amp; Research</div><p class="proc-desc">Understand the user, the context, and the problem space through interviews, surveys, and competitive analysis before touching Figma.</p></div>
-    </div>
-    <div class="proc-item rev d2">
-      <span class="proc-n">02</span>
-      <div><div class="proc-name">Define &amp; Frame</div><p class="proc-desc">Synthesise research into user personas, journey maps, and a clear problem statement that guides every design decision.</p></div>
-    </div>
-    <div class="proc-item rev d3">
-      <span class="proc-n">03</span>
-      <div><div class="proc-name">Ideate &amp; Wireframe</div><p class="proc-desc">Explore multiple directions through low-fidelity sketches and wireframes. Speed over perfection at this stage — diverge first.</p></div>
-    </div>
-    <div class="proc-item rev d4">
-      <span class="proc-n">04</span>
-      <div><div class="proc-name">Design &amp; Prototype</div><p class="proc-desc">Build high-fidelity UI in Figma with a consistent design system, then prototype key flows for realistic user testing.</p></div>
-    </div>
-    <div class="proc-item rev d5">
-      <span class="proc-n">05</span>
-      <div><div class="proc-name">Test &amp; Iterate</div><p class="proc-desc">Run usability sessions, gather feedback, measure against success metrics, and refine. Design is never done — it evolves.</p></div>
-    </div>
+    <div class="proc-item rev d1"><span class="proc-n">01</span><div><div class="proc-name">Discover &amp; Research</div><p class="proc-desc">Understand the user, the context, and the problem space through interviews, surveys, and competitive analysis before touching Figma.</p></div></div>
+    <div class="proc-item rev d2"><span class="proc-n">02</span><div><div class="proc-name">Define &amp; Frame</div><p class="proc-desc">Synthesise research into user personas, journey maps, and a clear problem statement that guides every design decision.</p></div></div>
+    <div class="proc-item rev d3"><span class="proc-n">03</span><div><div class="proc-name">Ideate &amp; Wireframe</div><p class="proc-desc">Explore multiple directions through low-fidelity sketches and wireframes. Speed over perfection at this stage — diverge first.</p></div></div>
+    <div class="proc-item rev d4"><span class="proc-n">04</span><div><div class="proc-name">Design &amp; Prototype</div><p class="proc-desc">Build high-fidelity UI in Figma with a consistent design system, then prototype key flows for realistic user testing.</p></div></div>
+    <div class="proc-item rev d5"><span class="proc-n">05</span><div><div class="proc-name">Test &amp; Iterate</div><p class="proc-desc">Run usability sessions, gather feedback, measure against success metrics, and refine. Design is never done — it evolves.</p></div></div>
   </div>
 </section>
 
-<!-- ── CONTACT ────────────────────────────────────────────────── -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
     <p class="contact-ey rev">Let's Connect</p>
     <h2 class="contact-h rev d1">OPEN TO<br><span class="out">GREAT</span></h2>
     <span class="contact-it rev d2">work that matters.</span>
-    <p class="contact-p rev d3">Currently seeking <strong>UI/UX internship opportunities</strong> across India and open to remote roles. If you're building something meaningful, I'd love to be part of it.</p>
+    <p class="contact-p rev d3">Currently seeking <strong>UI/UX internship opportunities</strong> across India and open to remote roles.<br>If you're building something meaningful, I'd love to be part of it.</p>
     <div class="cpills rev d4">
-      <a href="mailto:omkarmahadik@email.com" class="cp cp-primary">
+      <a href="mailto:omkarmahadik@gmail.com" class="cp cp-prim">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Email Me
       </a>
-      <a href="https://linkedin.com/in/omkarmahadik-ux" target="_blank" rel="noopener" class="cp">
+      <a href="https://www.linkedin.com/in/omkarmahadik-ux" target="_blank" rel="noopener noreferrer" class="cp">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <a href="https://www.behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study" target="_blank" rel="noopener" class="cp">
+      <a href="https://www.behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study" target="_blank" rel="noopener noreferrer" class="cp">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.2.857 1.83 2.006 1.83.63 0 1.14-.182 1.435-.69h3.315zm-5.443-3.217c-.024-1.177-.86-1.654-1.956-1.654-1.023 0-1.838.48-2.02 1.654h3.976z"/></svg>
         Behance
       </a>
-      <a href="https://omkarmahadik.framer.website" target="_blank" rel="noopener" class="cp">
+      <a href="https://omkarmahadik.framer.website" target="_blank" rel="noopener noreferrer" class="cp">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 12h20"/></svg>
         Portfolio
       </a>
@@ -218,223 +235,483 @@
   </div>
 </section>
 
-<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<!-- FOOTER -->
 <footer>
-  <div>
-    <div class="foot-logo">Omkar<b>.</b> — Iconic</div>
-    <div class="foot-sub">UI/UX Designer · Mumbai, India</div>
+  <div class="fl">
+    <div class="flogo">Omkar<b>.</b> — Iconic</div>
+    <div class="fsub">UI/UX Designer · Mumbai, India</div>
   </div>
-  <div class="foot-c">Designed &amp; built with intent &nbsp;·&nbsp; &copy; 2025 Omkar Mahadik</div>
-  <div class="foot-r">
-    <a href="https://linkedin.com/in/omkarmahadik-ux" target="_blank" rel="noopener" class="foot-lnk">LinkedIn</a>
-    <a href="https://www.behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study" target="_blank" rel="noopener" class="foot-lnk">Behance</a>
-    <a href="https://omkarmahadik.framer.website" target="_blank" rel="noopener" class="foot-lnk">Framer</a>
+  <div class="fmid">Designed &amp; built with intent &nbsp;·&nbsp; &copy; 2025 Omkar Mahadik</div>
+  <div class="fr">
+    <a href="https://www.linkedin.com/in/omkarmahadik-ux" target="_blank" rel="noopener noreferrer" class="flnk">LinkedIn</a>
+    <a href="https://www.behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study" target="_blank" rel="noopener noreferrer" class="flnk">Behance</a>
+    <a href="https://omkarmahadik.framer.website" target="_blank" rel="noopener noreferrer" class="flnk">Framer</a>
   </div>
 </footer>
 
-<!-- ── BACK TO TOP ────────────────────────────────────────────── -->
 <button id="btt" aria-label="Back to top">↑</button>
 
-<!-- ── AI CHAT BOT ────────────────────────────────────────────── -->
-<div id="chat-panel" role="dialog" aria-label="Chat with Omkar's AI">
-  <div class="cp-head">
-    <div class="cp-head-l">
-      <div class="cp-av">OM</div>
+<!-- CHAT BOT -->
+<div id="chat-box" role="dialog" aria-label="Chat with Iconic">
+  <div class="cb-head">
+    <div class="cb-head-l">
+      <div class="cb-av"><div class="cb-av-ring"></div>OM</div>
       <div>
-        <div class="cp-name">Iconic — Omkar's AI</div>
-        <div class="cp-tag">Ask me anything about Omkar</div>
+        <div class="cb-name">Iconic ✦</div>
+        <div class="cb-status"><span class="cb-sdot"></span>Online now</div>
       </div>
     </div>
-    <button class="cp-close" id="chat-close" aria-label="Close chat">✕</button>
+    <div class="cb-acts">
+      <button class="cb-act" id="cb-clear" title="Clear chat">🗑</button>
+      <button class="cb-act" id="cb-close" title="Close" aria-label="Close chat">✕</button>
+    </div>
   </div>
-  <div id="chat-msgs"></div>
-  <div class="cp-suggestions" id="suggestions">
-    <span class="sug">What's your process?</span>
-    <span class="sug">Tell me about Rydo</span>
-    <span class="sug">Skills &amp; tools?</span>
-    <span class="sug">Open to work?</span>
+
+  <div class="cb-mode">
+    <span class="cb-mode-lbl">Mode</span>
+    <div class="cb-toggle">
+      <button class="cb-opt active" data-mode="smart">Smart FAQ</button>
+      <button class="cb-opt" data-mode="ai">AI Mode</button>
+    </div>
+    <div class="cb-key-row" id="cb-key-row">
+      <input class="cb-key-inp" id="cb-key-inp" type="password" placeholder="Paste Anthropic API key…" autocomplete="off"/>
+      <button class="cb-key-save" id="cb-key-save">Save</button>
+    </div>
   </div>
-  <div class="cp-input">
-    <input id="chat-input" type="text" placeholder="Ask me anything…" autocomplete="off" maxlength="300"/>
-    <button id="chat-send" aria-label="Send">
+
+  <div id="cb-msgs" role="log" aria-live="polite"></div>
+
+  <div class="cb-sugs" id="cb-sugs">
+    <div class="cb-sugs-lbl">Quick questions</div>
+    <div class="cb-sugs-row" id="cb-sugs-row"></div>
+  </div>
+
+  <div class="cb-inp-row">
+    <input id="cb-inp" type="text" placeholder="Ask me anything about Omkar…" autocomplete="off" maxlength="200" aria-label="Type your message"/>
+    <span class="cb-char" id="cb-char">200</span>
+    <button id="cb-send" aria-label="Send">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
   </div>
 </div>
 
-<button id="chat-btn" aria-label="Chat with Omkar's AI">
-  <div class="chat-btn-dot"></div>
+<button id="chat-fab" aria-label="Chat with Iconic" aria-expanded="false">
+  <div class="fab-dot"></div>
   Ask Iconic ✦
+  <span class="fab-badge" id="fab-badge">1</span>
 </button>
 
-<!-- ── SCRIPTS ────────────────────────────────────────────────── -->
 <script>
-/* ── PRELOADER ─────────────────────────────────────── */
-window.addEventListener('load',()=>{
-  setTimeout(()=>document.getElementById('preloader').classList.add('done'),1600);
+(function(){
+'use strict';
+
+/* ── LENIS SMOOTH SCROLL ─────── */
+var lenis = new Lenis({
+  duration: 1.2,
+  easing: function(t){ return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+});
+function lenisRaf(time){ lenis.raf(time); requestAnimationFrame(lenisRaf); }
+requestAnimationFrame(lenisRaf);
+
+var prog = document.getElementById('prog');
+
+/* keep scroll progress + nav in sync with Lenis */
+lenis.on('scroll', function(e){
+  var max = document.body.scrollHeight - window.innerHeight;
+  prog.style.width = (max > 0 ? Math.min(e.scroll / max * 100, 100) : 0) + '%';
 });
 
-/* ── SCROLL PROGRESS ───────────────────────────────── */
-const pbar = document.getElementById('progress-bar');
-window.addEventListener('scroll',()=>{
-  const pct = scrollY/(document.body.scrollHeight-innerHeight)*100;
-  pbar.style.width = Math.min(pct,100)+'%';
-},{passive:true});
+/* ── PRELOADER ───────────────── */
+window.addEventListener('load', function(){
+  setTimeout(function(){ document.getElementById('loader').classList.add('out'); }, 1600);
+});
 
-/* ── CURSOR (pointer devices only) ────────────────── */
-if(matchMedia('(hover:hover)').matches){
-  const dot=document.getElementById('c-dot'),ring=document.getElementById('c-ring');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+/* ── PROGRESS BAR ────────────── */
+/* handled by lenis.on('scroll') above */
+
+/* ── CUSTOM CURSOR ───────────── */
+if (window.matchMedia('(hover: hover)').matches) {
+  var cdot = document.getElementById('cdot');
+  var cring = document.getElementById('cring');
+  var mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', function(e){ mx = e.clientX; my = e.clientY; });
   (function loop(){
-    dot.style.left=mx+'px';dot.style.top=my+'px';
-    rx+=(mx-rx)*.11;ry+=(my-ry)*.11;
-    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    cdot.style.left = mx + 'px'; cdot.style.top = my + 'px';
+    rx += (mx - rx) * 0.11; ry += (my - ry) * 0.11;
+    cring.style.left = rx + 'px'; cring.style.top = ry + 'px';
     requestAnimationFrame(loop);
-  })();
-  document.querySelectorAll('a,button,.chip,.b-card,.proc-item,.edu-row').forEach(el=>{
-    el.addEventListener('mouseenter',()=>document.body.classList.add('c-hov'));
-    el.addEventListener('mouseleave',()=>document.body.classList.remove('c-hov'));
+  }());
+  document.querySelectorAll('a, button, .chip, .bc, .proc-item, .edu-row').forEach(function(el){
+    el.addEventListener('mouseenter', function(){ document.body.classList.add('chov'); });
+    el.addEventListener('mouseleave', function(){ document.body.classList.remove('chov'); });
   });
 }
 
-/* ── DARK MODE ─────────────────────────────────────── */
-const html=document.documentElement;
-const themeBtn=document.getElementById('theme-btn');
-const themeIcon=document.getElementById('theme-icon');
-const themePath=document.getElementById('theme-path');
-const SUN='M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 6a6 6 0 100 12A6 6 0 0012 6z';
-const MOON='M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z';
-// Load saved preference
-const saved=localStorage.getItem('theme');
-if(saved==='dark'){html.setAttribute('data-theme','dark');themePath.setAttribute('d',SUN);}
-themeBtn.addEventListener('click',()=>{
-  const isDark=html.getAttribute('data-theme')==='dark';
-  html.setAttribute('data-theme',isDark?'light':'dark');
-  themePath.setAttribute('d',isDark?MOON:SUN);
-  localStorage.setItem('theme',isDark?'light':'dark');
+/* ── DARK MODE ───────────────── */
+var html  = document.documentElement;
+var tbtn  = document.getElementById('tbtn');
+var tpath = document.getElementById('tpath');
+var SUN  = 'M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 6a6 6 0 100 12A6 6 0 0012 6z';
+var MOON = 'M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z';
+if (localStorage.getItem('omk-theme') === 'dark') {
+  html.setAttribute('data-theme', 'dark');
+  tpath.setAttribute('d', SUN);
+}
+tbtn.addEventListener('click', function(){
+  var dark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', dark ? 'light' : 'dark');
+  tpath.setAttribute('d', dark ? MOON : SUN);
+  localStorage.setItem('omk-theme', dark ? 'light' : 'dark');
 });
 
-/* ── NAV SCROLL + ACTIVE LINKS ─────────────────────── */
-const nav=document.getElementById('nav');
-const nLinks=document.querySelectorAll('.n-lnk');
-const secs=document.querySelectorAll('section[id]');
-window.addEventListener('scroll',()=>{
-  nav.classList.toggle('on',scrollY>60);
-  let cur='';
-  secs.forEach(s=>{if(scrollY>=s.offsetTop-140)cur=s.id;});
-  nLinks.forEach(l=>l.classList.toggle('act',l.getAttribute('href')==='#'+cur));
-},{passive:true});
+/* ── MOBILE MENU ─────────────── */
+var ham     = document.getElementById('ham');
+var mobNav  = document.getElementById('mob-nav');
+var mobOpen = false;
 
-/* ── SCROLL REVEAL ─────────────────────────────────── */
-const ro=new IntersectionObserver(es=>{
-  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});
-},{threshold:0.1});
-document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+function setMenu(open) {
+  mobOpen = open;
+  ham.classList.toggle('open', open);
+  mobNav.classList.toggle('open', open);
+  mobNav.setAttribute('aria-hidden', String(!open));
+  ham.setAttribute('aria-expanded', String(open));
+}
+ham.addEventListener('click', function(){ setMenu(!mobOpen); });
 
-/* ── SMOOTH ANCHORS ────────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+// close on any mob-link click
+document.querySelectorAll('.mob-link').forEach(function(l){
+  l.addEventListener('click', function(){ setMenu(false); });
+});
+
+// close on outside click
+document.addEventListener('click', function(e){
+  if (mobOpen && !ham.contains(e.target) && !mobNav.contains(e.target)) setMenu(false);
+});
+
+/* ── NAV ACTIVE + SCROLL ─────── */
+var nav   = document.getElementById('nav');
+var nls   = document.querySelectorAll('.nl');
+var mlnks = document.querySelectorAll('.mob-link');
+var secs  = document.querySelectorAll('section[id]');
+
+lenis.on('scroll', function(e){
+  var sy = e.scroll;
+  nav.classList.toggle('on', sy > 60);
+  btt.classList.toggle('show', sy > 500);
+  if (mobOpen && sy > 60) setMenu(false);
+  var cur = '';
+  secs.forEach(function(s){
+    if (sy >= s.offsetTop - 150) cur = s.id;
+  });
+  nls.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#' + cur); });
+  mlnks.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#' + cur); });
+});
+
+/* ── SCROLL REVEAL ───────────── */
+var ro = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.rev').forEach(function(el){ ro.observe(el); });
+
+/* ── SMOOTH ANCHORS ──────────── */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var h = a.getAttribute('href');
+    if (h === '#') { e.preventDefault(); lenis.scrollTo(0, { duration: 1.4 }); return; }
+    var t = document.querySelector(h);
+    if (t) { e.preventDefault(); lenis.scrollTo(t, { offset: -80, duration: 1.4 }); }
   });
 });
 
-/* ── BACK TO TOP ───────────────────────────────────── */
-const btt=document.getElementById('btt');
-window.addEventListener('scroll',()=>btt.classList.toggle('show',scrollY>500),{passive:true});
-btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+/* ── BACK TO TOP ─────────────── */
+var btt = document.getElementById('btt');
+/* btt.show toggled via lenis scroll event above */
+btt.addEventListener('click', function(){ lenis.scrollTo(0, { duration: 1.4 }); });
 
-/* ── AI CHAT BOT ───────────────────────────────────── */
-const panel=document.getElementById('chat-panel');
-const chatBtn=document.getElementById('chat-btn');
-const closeBtn=document.getElementById('chat-close');
-const msgsDiv=document.getElementById('chat-msgs');
-const input=document.getElementById('chat-input');
-const sendBtn=document.getElementById('chat-send');
-const sugsDiv=document.getElementById('suggestions');
-let chatHistory=[];
-let chatOpen=false;
+/* ════════════════════════════════
+   CHAT BOT
+════════════════════════════════ */
+var fab     = document.getElementById('chat-fab');
+var box     = document.getElementById('chat-box');
+var cbClose = document.getElementById('cb-close');
+var cbClear = document.getElementById('cb-clear');
+var msgs    = document.getElementById('cb-msgs');
+var inp     = document.getElementById('cb-inp');
+var sendBtn = document.getElementById('cb-send');
+var charEl  = document.getElementById('cb-char');
+var sugsRow = document.getElementById('cb-sugs-row');
+var badge   = document.getElementById('fab-badge');
+var keyRow  = document.getElementById('cb-key-row');
+var keyInp  = document.getElementById('cb-key-inp');
+var keySave = document.getElementById('cb-key-save');
 
-// System prompt about Omkar
-const SYSTEM=`You are "Iconic" — the personal AI assistant on Omkar Mahadik's portfolio website. You speak in first person as Omkar, or refer to him naturally.
+var isOpen  = false;
+var greeted = false;
+var mode    = 'smart';
+var apiKey  = localStorage.getItem('omk-api-key') || '';
+var aiHist  = [];
 
-About Omkar:
-- Name: Omkar Mahadik, alias "Iconic"
-- Role: UI/UX Designer, fresher
-- Location: Mumbai, India
-- Education: UI/UX Design course at Edit Institute, Mumbai (ongoing); BCA from Tilak Maharashtra Vidyapeeth (completed)
-- Skills: Figma, Framer, User Research, Wireframing, Prototyping, Visual Design, Usability Testing, Design Systems, Interaction Design
-- Project: Rydo — a self-initiated cab booking app UX case study (simplified booking flow, credential management, payment options, vehicle selection). Published on Behance.
-- Portfolio: omkarmahadik.framer.website
-- LinkedIn: linkedin.com/in/omkarmahadik-ux
-- Behance: behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study
-- Looking for: UI/UX internship opportunities in India (remote-friendly)
-- Design philosophy: Research-first, minimal, effortless
+if (apiKey) keyInp.value = apiKey;
 
-Keep responses short (2-4 sentences max), friendly, and direct. If asked about hiring or collaboration, encourage reaching out via LinkedIn or email. Never make up projects or experience that isn't listed above.`;
-
-function addMsg(text,isBot){
-  const div=document.createElement('div');
-  div.className='msg '+(isBot?'msg-bot':'msg-user');
-  div.textContent=text;
-  msgsDiv.appendChild(div);
-  msgsDiv.scrollTop=msgsDiv.scrollHeight;
+function timeNow() {
+  var d = new Date(), h = d.getHours(), m = d.getMinutes();
+  var ap = h >= 12 ? 'pm' : 'am';
+  h = h % 12 || 12;
+  return h + ':' + (m < 10 ? '0' + m : m) + ' ' + ap;
 }
 
-function addTyping(){
-  const div=document.createElement('div');
-  div.className='msg-typing';div.id='typing';
-  div.innerHTML='<span></span><span></span><span></span>';
-  msgsDiv.appendChild(div);
-  msgsDiv.scrollTop=msgsDiv.scrollHeight;
-  return div;
-}
+function addMsg(text, isBot, links) {
+  var wrap  = document.createElement('div');
+  wrap.className = 'cm ' + (isBot ? 'cm-bot' : 'cm-user');
 
-async function sendMsg(text){
-  if(!text.trim())return;
-  addMsg(text,false);
-  input.value='';
-  sugsDiv.style.display='none';
-  chatHistory.push({role:'user',content:text});
-  const typing=addTyping();
+  var inner = document.createElement('div');
+  inner.className = 'cm-inner';
+  inner.textContent = text;
 
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:200,
-        system:SYSTEM,
-        messages:chatHistory
-      })
+  if (links && links.length) {
+    links.forEach(function(lk){
+      var a = document.createElement('a');
+      a.className = 'cm-link';
+      a.href = lk.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>' + lk.label;
+      inner.appendChild(a);
     });
-    const data=await res.json();
-    typing.remove();
-    const reply=data.content?.[0]?.text||"I'm having a moment — try again!";
-    addMsg(reply,true);
-    chatHistory.push({role:'assistant',content:reply});
-  }catch(err){
-    typing.remove();
-    addMsg("Looks like I'm offline right now. Reach out via LinkedIn instead!",true);
+  }
+
+  var time = document.createElement('div');
+  time.className = 'cm-time';
+  time.textContent = timeNow();
+
+  wrap.appendChild(inner);
+  wrap.appendChild(time);
+  msgs.appendChild(wrap);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  var t = document.createElement('div');
+  t.className = 'cb-typing'; t.id = 'cb-typing';
+  t.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(t);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+function hideTyping() {
+  var t = document.getElementById('cb-typing');
+  if (t) t.remove();
+}
+
+/* Knowledge base */
+var KB = [
+  { keys:['hi','hello','hey','hii','yo','sup','good morning','good evening'],
+    reply:"Hey! 👋 I'm Iconic — Omkar's AI assistant. Ask me about his design work, skills, projects, or how to get in touch!", links:null },
+
+  { keys:['who are you','what are you','iconic','about you','introduce'],
+    reply:"I'm Iconic — the personal AI built for Omkar Mahadik's portfolio. I can tell you everything about him, his work, and how to hire him!", links:null },
+
+  { keys:['who is omkar','about omkar','tell me about omkar','omkar mahadik','about him'],
+    reply:"Omkar Mahadik is a UI/UX designer from Mumbai, India — alias Iconic. He's research-first, minimal in execution, and passionate about experiences that feel effortless. He's a fresher actively seeking UI/UX internships.", links:null },
+
+  { keys:['process','design process','workflow','how do you work','approach','method','steps'],
+    reply:"Omkar follows 5 steps:\n\n01. Discover & Research\n02. Define & Frame\n03. Ideate & Wireframe\n04. Design & Prototype\n05. Test & Iterate\n\nResearch always comes before opening Figma!", links:null },
+
+  { keys:['rydo','cab','booking app'],
+    reply:"Rydo is Omkar's first UX case study — a cab booking app redesign covering simplified booking flow, credential management, payment options, and vehicle selection. Published on Behance!", links:[{url:'https://www.behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study',label:'View Rydo on Behance ↗'}] },
+
+  { keys:['foodnest','food','delivery','food delivery','food app','ui case'],
+    reply:"FoodNest is Omkar's UI case study — a food delivery app redesign focused on reducing friction in the ordering experience with a clean visual system and intuitive navigation.", links:[{url:'https://www.behance.net/omkarmahadik',label:'View FoodNest on Behance ↗'}] },
+
+  { keys:['project','case study','work','portfolio','behance'],
+    reply:"Omkar has 2 case studies: Rydo (UX — cab booking app) and FoodNest (UI — food delivery app). More are in progress!", links:[{url:'https://www.behance.net/omkarmahadik',label:'View All Work ↗'}] },
+
+  { keys:['skill','tool','figma','framer','software','stack','expertise','know'],
+    reply:"Omkar's toolkit: Figma, Framer, User Research, Wireframing, Prototyping, Visual Design, Usability Testing, Design Systems, and Interaction Design.", links:null },
+
+  { keys:['intern','hire','job','available','open to work','opportunity','recruit','looking for','work'],
+    reply:"Yes! Omkar is actively seeking UI/UX internship opportunities across India and is open to remote roles too. Best way to reach him 👇",
+    links:[{url:'https://www.linkedin.com/in/omkarmahadik-ux',label:'Connect on LinkedIn ↗'},{url:'mailto:omkarmahadik@gmail.com',label:'Send an Email ↗'}] },
+
+  { keys:['education','study','college','institute','degree','bca','edit','tilak'],
+    reply:"Omkar is currently enrolled in the UI/UX Design course at Edit Institute, Mumbai. He also holds a BCA (Bachelor of Computer Applications) from Tilak Maharashtra Vidyapeeth.", links:null },
+
+  { keys:['location','where','city','mumbai','based','remote','india'],
+    reply:"Omkar is based in Mumbai, India. Open to on-site roles in Mumbai and fully remote opportunities anywhere.", links:null },
+
+  { keys:['contact','reach','email','linkedin','connect','talk','message','dm','hire'],
+    reply:"Reach Omkar via email, LinkedIn, or check out his Behance and portfolio 👇",
+    links:[{url:'https://www.linkedin.com/in/omkarmahadik-ux',label:'LinkedIn ↗'},{url:'mailto:omkarmahadik@gmail.com',label:'Email ↗'},{url:'https://omkarmahadik.framer.website',label:'Portfolio ↗'}] },
+
+  { keys:['philosophy','style','minimal','aesthetic','belief','design thinking'],
+    reply:"Design philosophy: research-first, minimal execution, emotional experience over visual noise. If it feels effortless to use, the design did its job.", links:null },
+
+  { keys:['framer','website','portfolio site','site'],
+    reply:"Omkar's Framer portfolio is live at omkarmahadik.framer.website — and this very site you're on! Also check Behance for case studies.",
+    links:[{url:'https://omkarmahadik.framer.website',label:'Framer Portfolio ↗'},{url:'https://www.behance.net/omkarmahadik',label:'Behance ↗'}] }
+];
+
+var FALLBACKS = [
+  "Great question! I'm best at answering things about Omkar's skills, projects, or how to get in touch. Try asking about his work!",
+  "Hmm, I'm not sure about that one. You can always reach Omkar directly — LinkedIn is the fastest way!",
+  "Try asking me about his process, Rydo, FoodNest, skills, or how to hire him — that's my sweet spot!",
+  "I might not have the answer, but Omkar definitely does! Drop him a message via the Contact section. 👇"
+];
+var fbIdx = 0;
+
+function smartReply(text) {
+  var lower = text.toLowerCase().trim();
+  var best = null, bestLen = 0;
+  KB.forEach(function(item){
+    item.keys.forEach(function(k){
+      if (lower.indexOf(k) !== -1 && k.length > bestLen) {
+        bestLen = k.length; best = item;
+      }
+    });
+  });
+  if (best) return best;
+  return { reply: FALLBACKS[fbIdx++ % FALLBACKS.length], links: null };
+}
+
+function aiReply(text, cb) {
+  if (!apiKey) {
+    cb("No API key saved. Switch to AI Mode and paste your Anthropic API key above to enable real AI!", null);
+    return;
+  }
+  var SYSTEM = "You are 'Iconic', the AI assistant on Omkar Mahadik's portfolio. Omkar is a UI/UX designer (fresher) in Mumbai, India, alias Iconic. Skills: Figma, Framer, User Research, Wireframing, Prototyping, Visual Design, Usability Testing, Design Systems. Projects: Rydo (cab booking app UX case study, behance.net/gallery/246807495/Rydo-Booking-Cab-UX-Case-Study) and FoodNest (food delivery UI case study). Education: UI/UX course at Edit Institute Mumbai (ongoing), BCA from Tilak Maharashtra Vidyapeeth. Seeking: UI/UX internships, open to remote. Portfolio: omkarmahadik.framer.website. LinkedIn: linkedin.com/in/omkarmahadik-ux. Email: omkarmahadik@gmail.com. Keep replies 2-3 sentences, friendly, direct.";
+  aiHist.push({ role: 'user', content: text });
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'x-api-key': apiKey, 'anthropic-version': '2023-06-01' },
+    body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 200, system: SYSTEM, messages: aiHist })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    var reply = (d.content && d.content[0] && d.content[0].text) || "Something went wrong. Try again!";
+    aiHist.push({ role: 'assistant', content: reply });
+    cb(reply, null);
+  })
+  .catch(function(){ cb("API error — check your key or network. Smart FAQ mode works without a key!", null); });
+}
+
+/* Suggestions */
+var SUGS = [
+  ["What's your process?", "Tell me about Rydo", "Open to work?"],
+  ["Skills & tools?", "Where are you based?", "How to hire you?"],
+  ["Tell me about FoodNest", "Education background?", "View portfolio?"],
+  ["What is Rydo about?", "Contact Omkar", "Tell me about yourself"]
+];
+var sugIdx = 0;
+
+function renderSugs() {
+  sugsRow.innerHTML = '';
+  SUGS[sugIdx % SUGS.length].forEach(function(s){
+    var b = document.createElement('button');
+    b.className = 'csug';
+    b.textContent = s;
+    b.addEventListener('click', function(){ handleSend(s); });
+    sugsRow.appendChild(b);
+  });
+  sugIdx++;
+}
+
+function handleSend(text) {
+  text = (text || inp.value).trim();
+  if (!text) return;
+  addMsg(text, false, null);
+  inp.value = '';
+  charEl.textContent = '200';
+  renderSugs();
+  showTyping();
+  var delay = 600 + Math.random() * 500;
+  if (mode === 'ai') {
+    setTimeout(function(){
+      aiReply(text, function(reply, links){ hideTyping(); addMsg(reply, true, links); });
+    }, delay);
+  } else {
+    setTimeout(function(){
+      hideTyping();
+      var res = smartReply(text);
+      addMsg(res.reply, true, res.links);
+    }, delay);
   }
 }
 
-chatBtn.addEventListener('click',()=>{
-  chatOpen=!chatOpen;
-  panel.classList.toggle('open',chatOpen);
-  if(chatOpen&&msgsDiv.children.length===0){
-    addMsg("Hey! I'm Iconic — Omkar's AI assistant. Ask me about his work, skills, or how to get in touch 👋",true);
+function openChat() {
+  isOpen = true;
+  box.classList.add('open');
+  fab.setAttribute('aria-expanded', 'true');
+  badge.classList.remove('show');
+  if (!greeted) {
+    greeted = true;
+    renderSugs();
+    showTyping();
+    setTimeout(function(){
+      hideTyping();
+      addMsg("Hey! 👋 I'm Iconic — Omkar's AI assistant. Ask me about his projects, skills, or how to get in touch.", true, null);
+    }, 700);
   }
-  if(chatOpen)setTimeout(()=>input.focus(),350);
+  setTimeout(function(){ inp.focus(); }, 350);
+}
+
+function closeChat() {
+  isOpen = false;
+  box.classList.remove('open');
+  fab.setAttribute('aria-expanded', 'false');
+}
+
+fab.addEventListener('click', function(){ isOpen ? closeChat() : openChat(); });
+cbClose.addEventListener('click', closeChat);
+cbClear.addEventListener('click', function(){
+  msgs.innerHTML = '';
+  aiHist = [];
+  greeted = false;
+  openChat();
 });
-closeBtn.addEventListener('click',()=>{chatOpen=false;panel.classList.remove('open');});
-sendBtn.addEventListener('click',()=>sendMsg(input.value));
-input.addEventListener('keydown',e=>{if(e.key==='Enter')sendMsg(input.value);});
-document.querySelectorAll('.sug').forEach(s=>{
-  s.addEventListener('click',()=>sendMsg(s.textContent));
+
+sendBtn.addEventListener('click', function(){ handleSend(); });
+inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); handleSend(); } });
+inp.addEventListener('input', function(){ charEl.textContent = 200 - inp.value.length; });
+
+/* Mode toggle */
+document.querySelectorAll('.cb-opt').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.cb-opt').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    mode = btn.getAttribute('data-mode');
+    keyRow.classList.toggle('show', mode === 'ai');
+    aiHist = [];
+    if (mode === 'ai' && !apiKey) {
+      addMsg("AI Mode activated! Paste your Anthropic API key above and hit Save. Without a key I'll fallback to Smart FAQ.", true, null);
+    } else if (mode === 'ai') {
+      addMsg("AI Mode is on! Real AI responses enabled. 🤖", true, null);
+    } else {
+      addMsg("Smart FAQ mode — no API key needed. Ask away!", true, null);
+    }
+  });
 });
+
+/* API key */
+keySave.addEventListener('click', function(){
+  var k = keyInp.value.trim();
+  if (!k) { addMsg("Please paste a valid API key first.", true, null); return; }
+  apiKey = k;
+  localStorage.setItem('omk-api-key', k);
+  addMsg("API key saved! AI Mode active. 🎉", true, null);
+});
+
+/* Badge after 3.5s */
+setTimeout(function(){ if (!isOpen) badge.classList.add('show'); }, 3500);
+
+/* Escape to close */
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen) closeChat(); });
+
+}());
 </script>
 </body>
 </html>
